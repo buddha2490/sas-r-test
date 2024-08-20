@@ -12,6 +12,8 @@ Our company is managing a SAS to R migration for a large pharma company. Our con
 
 You can access the programming test by cloning the following repo. A copy of these instructions is bundled with the repo.
 
+<https://github.com/buddha2490/sas-r-test.git>
+
 ## Dataset
 
 The data were downloaded from the Worcester Heart Attack Study that includes several risk factors to assess survival time after a heart attack. Follow up time for all participants begins at the time of hospital admission after the heart attack and ends with death or censoring. The following variables are available for analysis:
