@@ -1,6 +1,6 @@
 ---
 title: "Programming test"
-format: html
+format: docx
 editor: visual
 ---
 
@@ -10,7 +10,7 @@ Our company is managing a SAS to R migration for a large pharma company. Our con
 
 ## Materials
 
-You can access the programming test by cloning the following repo. A copy of these instructions is bundled with the repo.
+The coding materials are send to you via a zipped archive that has everything required, including sample data, SAS code, and a copy of these directions. If for some reason you have problems with the archive, you can also clone the repo.
 
 <https://github.com/buddha2490/sas-r-test.git>
 
@@ -37,7 +37,5 @@ The attached SAS code needs to be translated exactly. Please use `dplyr` for all
 If you do not have SAS you can download the [Altair SLC](https://altair.com/altair-slc) onto your computer, there is a free community edition you can download and use on a Mac or PC. I have provided an RTF file in the repo with all the SAS output from the program for you to reference as well.
 
 The final program should be a ".R" file that we can run without errors on our computers and should be runnable start to finish on our consultant's system. This program must produce the output files listed in the /output directory. These files are a mixture of images and excel files.
-
-When complete, please e-mail the ".R" program to [Swati Sood](swati@procogia.com) at ProCogia.
 
 Thank you!
