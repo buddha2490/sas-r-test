@@ -1,0 +1,41 @@
+---
+title: "Programming test"
+format: html
+editor: visual
+---
+
+## Introduction
+
+Our company is managing a SAS to R migration for a large pharma company. Our consultants have been tasks with providing a line-for-line translation of their SAS code and reproducing any output files exactly. The goal of this coding test is to see if candidates can accomplish this with some sample code and data.
+
+## Materials
+
+You can access the programming test by cloning the following repo. A copy of these instructions is bundled with the repo.
+
+## Dataset
+
+The data were downloaded from the Worcester Heart Attack Study that includes several risk factors to assess survival time after a heart attack. Follow up time for all participants begins at the time of hospital admission after the heart attack and ends with death or censoring. The following variables are available for analysis:
+
+-   lenfol - followup time from admission to death or censor date
+
+-   fstat: censor variable (death = 1, censor = 0)
+
+-   age - age at hospitalization
+
+-   bmi: body mass index
+
+-   hr: initial heart rate
+
+-   gender: (males=0, females = 1)
+
+## Assignment
+
+The attached SAS code needs to be translated exactly. Please use `dplyr` for all data manipulation and `ggplot2` for any graphics. The primary goal is to reproduce the output files exactly. A secondary goal is to evaluate candidates R programming skills and how you get to the final outcome.
+
+If you do not have SAS you can download the [Altair SLC](https://altair.com/altair-slc) onto your computer, there is a free community edition you can download and use on a Mac or PC. I have provided an RTF file in the repo with all the SAS output from the program for you to reference as well.
+
+The final program should be a ".R" file that we can run without errors on our computers and should be runnable start to finish on our consultant's system. This program must produce the output files listed in the /output directory. These files are a mixture of images and excel files.
+
+When complete, please e-mail the ".R" program to [Swati Sood](swati@procogia.com) at ProCogia.
+
+Thank you!
