@@ -1,4 +1,4 @@
-libname foo "/users/briancarter/onedrive/SAS/sas-r-test/data";
+libname foo "/users/briancarter/onedrive/SAS-R-Migrations/sas-r-test/data";
 
 
 proc format;
@@ -72,6 +72,8 @@ run;
 
 data &var. (keep = &var fstat frequency);
     set freqtbl;
+    if fstat NE .;
+    if &var NE .;
 run;
 %mend;
 
@@ -80,25 +82,31 @@ run;
 %freq(var=hypertension);
 %freq(var=agecat);
 
-ods excel file = "/users/briancarter/onedrive/sas/sas-r-test/output/frequencies.xlsx";
+
+ods excel file = "/users/briancarter/onedrive/sas-r-migrations/sas-r-test/output/frequencies.xlsx";
 
 ods excel options (sheet_name = "BMICAT");
 proc report data = bmicat;
-    col bmicat frequency;
-    define bmicat /group;
+    col bmicat frequency, fstat;
+    define bmicat/group;
+    define fstat /across;
 run;
 
 ods excel options (sheet_name = "AGECAT");
 proc report data = agecat;
-    col agecat frequency;
+    col agecat frequency, fstat;
     define agecat /group;
+    define fstat /across;
+
 run;
 
 
 ods excel options (sheet_name = "HYPERTENSION");
 proc report data = hypertension;
-    col hypertension frequency;
+    col hypertension frequency, fstat;
     define hypertension /group;
+    define fstat /across;
+
 run;
 
 ods excel close;
@@ -113,7 +121,7 @@ run;
 
 
 * Graphics *;
-ods graphics on / imagename="/users/briancarter/onedrive/sas/sas-r-test/output/univariate";
+ods graphics on / imagename="/users/briancarter/onedrive/sas-r-migrations/sas-r-test/output/univariate";
 proc univariate data = dat(where=(fstat=1));
     var lenfol;
     histogram lenfol;
@@ -180,7 +188,7 @@ run;
 
 
 
-ods excel file = "/users/briancarter/onedrive/sas/sas-r-test/output/models.xlsx";
+ods excel file = "/users/briancarter/onedrive/sas-r-migrations/sas-r-test/output/models.xlsx";
 ods excel options (sheet_name = "BMICAT");
 proc print data = bmicat noobs; run;
 
@@ -203,7 +211,7 @@ run;
 
 
 * Kaplan-Meier curves *;
-ods graphics on / imagename="/users/briancarter/onedrive/sas/sas-r-test/output/km";
+ods graphics on / imagename="/users/briancarter/onedrive/sas-r-migrations/sas-r-test/output/km";
 proc lifetest data = dat;
     time lenfol * fstat(0);
     strata bmicat;
